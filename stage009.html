@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Street View </title>
+    <style>
+        /* ストリートビューのmap部分を全面に表示 */
+        #map {
+    height: 100vh; /* ビューポートの高さを100%に設定 */
+    width: 100vw;  /* ビューポートの幅を100%に設定 */
+    top: 0;
+    left: 0;
+    z-index: 1; /* 他の要素と重ならないようにする */
+}
+
+        /* 番号（ｴﾘｱ⑤）を上に表示 */
+        .number-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            color: black; /* 文字色を黒に */
+            background-color: white; /* 背景色を白に */
+            padding: 5px 10px; /* 番号の周りに余白を追加 */
+            border: 3px solid white; /* 白い枠線 */
+            border-radius: 8px; /* 角を丸く */
+            z-index: 2; /* ストリートビューの上に表示 */
+        }
+
+        /* HTMLとbodyにマージンと高さを設定 */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        /* Googleのリンクを隠す */
+        .gm-style a {
+            pointer-events: none; /* リンクのクリックを無効にする */
+            display: none; /* ロゴやリンクを隠す */
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Mapsのストリートビュー -->
+    <div id="map"></div>
+
+    <!-- 番号（ｴﾘｱ⑤） -->
+    <div class="number-overlay">ｴﾘｱ⑤</div>
+
+    <!-- Google Maps APIの読み込み -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC75S3Y-anO16qtnrb2PRqI-deZteuyAJ8&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            // ストリートビューの中心位置
+            var streetViewCenter = { lat: 26.613417, lng: 127.969817 };
+            
+
+            // var streetViewCenter = { lat: 34.68722185044351, lng: 135.5203415003525 };
+
+            // ストリートビューの設定
+            var panorama = new google.maps.StreetViewPanorama(
+                document.getElementById('map'), {
+                    position: streetViewCenter,
+                    pov: { heading: 165, pitch: 0 },
+                    addressControl: false,
+                    fullscreenControl: false,
+                }
+            );
+        }
+    </script>
+</body>
+</html>

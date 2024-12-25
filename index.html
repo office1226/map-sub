@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じおげっさー</title>
+  <style>
+    /* ページ全体のレイアウト */
+    html, body {
+      height: 100%; /* ページ全体の高さを画面に合わせる */
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'ヒラギノ丸ゴ Pro W3', 'Hiragino Maru Gothic Pro', sans-serif; /* ヒラギノ丸ゴ */
+      /* font-family: 'Press Start 2P', cursive; ゲーム風のフォント */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: url('big-photo0000-1857.jpg'); /* 背景画像を指定 */
+      background-size: cover; /* 背景画像を画面に合わせて拡大 */
+      background-position: center; /* 画像を中央に配置 */
+      background-repeat: no-repeat; /* 背景画像が繰り返されないように */
+      height: 100%; /* ボディも画面全体の高さに合わせる */
+      overflow: hidden; /* 画面外の部分が表示されないように */
+    }
+
+    @keyframes scrollBackground {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -500px 0; /* 背景が動く距離 */
+      }
+    }
+
+    .container {
+      /* width: 100%; */
+      max-width: 800px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      background-color: rgba(211, 211, 211, 0.5); /* 半透明のオフホワイト背景 */
+      border-radius: 15px; /* 角を丸める */
+      margin-top: 10%; /* 上部に余白を追加して画面に収める */
+      /* flex-grow: 1; コンテナが余白を埋めるようにする */
+    }
+
+    /* 全体タイトルのスタイル */
+    .main-title {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin: 20px 0;
+      color: #FFD700; /* ゴールド */
+      text-transform: uppercase;
+    }
+
+    /* サブタイトルのスタイル */
+    .subtitle {
+      font-size: 1.5rem;
+      margin: 20px 0 10px;
+      color: black;
+    }
+
+    /* ボタンのグループ */  
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 50px;
+      flex-wrap: wrap; /* ボタンが折り返されるようにする */
+    }
+
+    /* エリアボタン（透けたブルー） */
+    .normal-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: rgba(0, 123, 255); /* 透けたブルー */
+      color: white;
+      border: 2px solid #FFD700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .normal-button:hover {
+      background-color: rgba(0, 123, 255, 0.8);
+      transform: scale(1.1);
+    }
+
+    /* 上級ボタン（透けたレッド） */
+    .advanced-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: rgba(255, 0, 0); /* 透けたレッド */
+      color: white;
+      border: 2px solid #FFD700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .advanced-button:hover {
+      background-color: rgba(255, 0, 0, 0.8);
+      transform: scale(1.1);
+    }
+
+    /* モバイル対応 */
+    @media (max-width: 600px) {
+      .normal-button, .advanced-button {
+        font-size: 0.9rem;
+      }
+
+      .container {
+        margin-top: 5%; /* スマホでは余白を少し小さく */
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="main-title">じおげっさー</h1>
+  <div class="container">
+
+    <div class="section">
+      <h2 class="subtitle">ノーマル問題</h2>
+      <div class="button-group">
+        <button class="normal-button" onclick="window.location.href='stage01.html'">エリア①</button>
+        <button class="normal-button" onclick="window.location.href='stage02.html'">エリア②</button>
+        <button class="normal-button" onclick="window.location.href='stage03.html'">エリア③</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="subtitle"></h2>
+      <div class="button-group">
+        <button class="normal-button" onclick="window.location.href='stage04.html'">エリア④</button>
+        <button class="normal-button" onclick="window.location.href='stage05.html'">エリア⑤</button>
+        <button class="normal-button" onclick="window.location.href='stage06.html'">エリア⑥</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="subtitle">🔥上級問題🔥</h2>
+      <div class="button-group">
+        <button class="advanced-button" onclick="window.location.href='stage07.html'">上級①</button>
+        <button class="advanced-button" onclick="window.location.href='stage08.html'">上級②(海外)</button>
+        <button class="advanced-button" onclick="window.location.href='stage09.html'">上級③(海外)</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
